@@ -1,10 +1,10 @@
 
 ##  Prints das 3 telas 
-** —    ![Tela Home](screenshots/home.png)
+  ** ![Tela Home](screenshots/home.png)
 
-** —    ![Tela Avaliações](screenshots/avaliacoes.png)
+  ** ![Tela Avaliações](screenshots/avaliacoes.png)
 
-** —    ![Tela Ranking](screenshots/ranking.png)
+  ** ![Tela Ranking](screenshots/ranking.png)
 
 
 
@@ -18,7 +18,7 @@
   (`Avaliacoes.vue`, `LeaderboardTable.vue`), "Parabéns! Novo líder do campeonato!"
   e mensagens de erro/sucesso em `RatingForm.vue`.
 
-### Reatividade (`ref()` / `reactive()`)
+### Reatividade 
 - `store/coffees.js` usa `reactive([...])` para a lista de cafés — qualquer alteração
   (nova avaliação) atualiza automaticamente Home, Avaliações e Ranking.
 - `RatingForm.vue` usa `ref()` para cada campo do formulário e um `computed()`
@@ -26,7 +26,7 @@
 - `Home.vue` e `Ranking.vue` consomem `computed()` (`totalAvaliados`, `cafeComMaiorNota`,
   `ultimaAvaliacao`, `ranking`) que se atualizam sozinhos sempre que o estado global muda.
 
-### Listas (`v-for` + gerenciamento de arrays)
+### Listas 
 - O array reativo `coffees` (em `store/coffees.js`) recebe novos itens via `push()`
   dentro de `adicionarAvaliacao()`.
 - `LeaderboardTable.vue` renderiza dinamicamente a lista ordenada (`ranking`) com `v-for`,
@@ -35,7 +35,7 @@
   alterar os dados originais.
 
 ### Componentes 
-Foram criados 4 componentes:
+
 - `CoffeeCard.vue` — recebe `coffee` via `props` e exibe nome, produtor, nota e data.
 - `RatingForm.vue` — formulário de avaliação, comunica-se com o estado global via
   o composable `useCoffeesStore()`.
@@ -54,7 +54,7 @@ A navegação é feita pela navbar em `App.vue` usando `<RouterLink>`, e também
 tem como com `useRouter().push('/avaliacoes')` no botão "Ver Avaliações"
 da Home.
 
-##  Cálculo da média SCA
+##  Cálculo da média 
 
 ```
 Média = (Aroma + Sabor + Acidez + Corpo + Finalização) / 5
